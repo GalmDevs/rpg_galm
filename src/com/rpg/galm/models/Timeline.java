@@ -1,4 +1,4 @@
-import Models.Historia;
+import com.rpg.galm.models.Historia;
 import java.util.ArrayList;
 
 public class Timeline {
