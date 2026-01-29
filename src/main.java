@@ -11,19 +11,13 @@ public class main {
         System.out.print("Digite o nome do seu personagem: ");
         String nome = sc.nextLine();
         
-        
-        
-        System.out.println("Escolha sua Classe:");
-        System.out.println("1-Mago: usa magia e inteligenca");
-        System.out.println("2-Guerreiro: Bate e e forte pra carai");
-        System.out.println("3-Arquiro: visao apurada e agil");
-        System.out.print("...sua Escolha de Classe: ");
-        
         Player p1 = new Player(nome,getClasseSel());
         
-        System.out.print("Seu "+p1.getClasse().getNomeClass()+" se chama "+p1.getNome());
+        System.out.println("Seu "+p1.getClasse().getNomeClass()+" se chama "+p1.getNome());
+        System.out.println("Boa Sorte !!!");
         
-        
+        Timeline campanha = new Timeline();
+        campanha.start(p1);
         
         sc.close();
     }
@@ -32,7 +26,14 @@ public class main {
         int escolha = 1;
         
         do{
-            escolha = sc.nextInt();
+            System.out.println("Escolha sua Classe:");
+            System.out.println("1-Mago: usa magia e inteligenca");
+            System.out.println("2-Guerreiro: Bate e e forte pra carai");
+            System.out.println("3-Arquiro: visao apurada e agil");
+            System.out.print("...sua Escolha de Classe: ");
+            
+            escolha = sc.nextInt(); 
+            
             switch (escolha) {
                 case 1:
                     return Classes.isMago();
@@ -41,10 +42,10 @@ public class main {
                 case 3:
                     return Classes.isArqueiro();
                 default:
-                    System.out.println("Escolha invalida");
+                    System.out.println("Escolha invalida!!! \n");
                     continue;
             }
-        }while(escolha < 1 && escolha > 3);
+        }while(escolha < 1 || escolha > 3);
         return null;
     }
 }
