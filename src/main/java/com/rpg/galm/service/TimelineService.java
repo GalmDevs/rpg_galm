@@ -21,7 +21,7 @@ public class TimelineService {
 		}
 	}
 
-	public void inicializarHistoria() {
+	private void inicializarHistoria() {
 		getAcontecimentos().add(new Historia("INICIO", "OP1", "OP2", "OP3"));
 	}
 
